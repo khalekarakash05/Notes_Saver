@@ -20,7 +20,7 @@ function NoteCard({ _id, title, content, createdAt, updatedAt, imageUrls, type, 
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const deleteUrl = `http://localhost:5000/api/notes/delete/${_id}`;
+      const deleteUrl = `${process.env.REACT_APP_BASE_URL}/notes/delete/${_id}`;
       const response = await axios.delete(deleteUrl, {
         headers: {
           Authorization: `Bearer ${token}`,
