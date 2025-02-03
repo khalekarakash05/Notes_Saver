@@ -7,7 +7,7 @@ function Sidebar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("authToken");
     // Optionally remove token and any other data you have stored
     toast.success("Logged out successfully");
     navigate("/signin");
